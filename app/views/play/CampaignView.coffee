@@ -707,7 +707,7 @@ module.exports = class CampaignView extends RootView
 
     for level, levelIndex in orderedLevels
       level.position ?= { x: 10, y: 10 }
-      level.locked = not me.ownsLevel(level.original)
+#       level.locked = not me.ownsLevel(level.original)
       level.locked = true if level.slug is 'kithgard-mastery' and @calculateExperienceScore() is 0
       level.locked = true if level.requiresSubscription and @requiresSubscription and me.get('hourOfCode')
       level.locked = false if @levelStatusMap[level.slug] in ['started', 'complete']
